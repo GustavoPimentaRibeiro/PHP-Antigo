@@ -1,0 +1,375 @@
+----------------------- Aula 1 -----------------------
+
+-------- Módulos (História do PHP) --------
+
+-> A Linguagem PHP começou em 1994, quando Rasmus Lerdorf resolveu criar um gerenciador de visitas para o seu site. Sua primeira criação não era uma linguagem, e sim uma ferramenta.
+Batizada de Personal Home Page, usava comandos simples inspirados da linguagem PERL. A segunda versão da ferramenta já permitia a manipulação de formulários e pequenos livros de 
+visita: o Personal Home Page/ Forms Interpreter, ou PHP/FI. Essa versão ficou bastante popular e começou a se espalhar em 1995.
+
+-> Com o objetivo de fazer sua ferramenta crescer, Rasmus liberou o acesso ao código-fonte da CGI em 1996, o que despertou o interesse de diversos programadores, entre eles os israelenses
+Zeev Suraski e Andi Gutmans. Esses dois reescreveram o núcleo da ferramenta e a transformou em uma Linguagem de Scripts, nos moldes em que nós temos o PHP atualmente. A partir de 1998, o PHP
+já começava a se destacar como uma das linguagens mais utilizadas na Internet. Foi nessa época que a linguagem foi rebatizada e passou a se chamar PHP: Hypertext Preprocessor e chegou à sua
+versão 3.0, com muitas funcionalidades interessantes.
+
+-> Em 2000, a quarta versão do PHP surge para eliminar a maioria dos erros e falhas de segurança encontrados pela comunidade. Enquanto isso, Zeev e Andi resolveram reescrever todo o núcleo da
+linguagem, abandonando quase que completamente o projeto original de Rasmus Lerdorf. Quatro anos depois, em 2004, surge o PHP5 que ficou mundialmente conhecido e atualmente conta com 32 versões
+internas, com mais de 1000 correções de falhas de segurança.
+
+
+
+
+----------------------- Aula 2 -----------------------
+
+-------- Módulos (Como funciona o PHP) --------
+
+-> Como funciona o PHP? Como transformar meu computador em um servidor? Como funciona tecnologias server-side? Qual é a diferença entre tecnologias PHP, ASP, JSP e etc? A segunda aula do seu Curso de PHP do Curso em Vídeo vai responder a essas e muitas outras perguntas que normalmente são feitas por quem está iniciando seus estudos em PHP.
+
+-> A infra-estrutura da Internet é baseada no modelo cliente x servidor. A Internet interliga clientes a servidores que possuem arquivos e fornecem cópias desses documentos.
+
+-> Nas tecnologias client-side, a função do servidor é apenas fornecer arquivos que o cliente solicita. Quem vai ter mais trabalho de processamento é o lado do cliente (client-side) que terá seu navegador trabalhando para interpretar os códigos e arquivos enviados pelo server. São exemplos de tecnologias client-side: HTML, CSS, JavaScript e Flash.
+
+-> Já nas tecnologias server-side, o servidor vai assumir a maior parte do trabalho, já que existe a interpretação de códigos do lado do servidor (server-side), que no caso do PHP são chamados scripts de servidor.
+
+-> Para o PHP funcionar corretamente, o servidor precisa ter o Apache, que é um program server, um interpretador PHP (engine) e suporte a um ou mais tipos de banco de dados (geralmente MySQL).
+
+-> Para transformar seu computador em um servidor com suporte PHP, você precisa de um sistema AMP (Apache + MySQL + PHP). Para usar PHP no Windows, instalamos um sistema WAMP. Para usar PHP no Linux, instalamos um sistema LAMP. Para usar PHP no Mac, instalamos um sistema MAMP.
+
+
+
+
+----------------------- Aula 3 -----------------------
+
+-------- Módulos (Como instalar o PHP) --------
+
+--- HTML ---
+-> <?php ?> - tag para criação de um script PHP dentro do HTML
+
+--- PHP ---
+-> echo "Mensagem"; - comando para criação de uma mensagem que será enviada para o HTML renderizar
+
+
+
+
+----------------------- Aula 4 -----------------------
+
+-------- Módulos (Variáveis em PHP) --------
+
+-> Todas as variáveis no PHP possuem um $ na frente e seguem as mesmas regras de construção de nomes de identificadores:
+    - Devem começar com uma letra (após o $)
+    - Podem conter letras e números
+    - Não podem conter caracteres acentuados
+    – Não podem conter símbolos como % # * & etc (exceto _ e $)
+    OBS: O PHP faz a diferenciação entre as letras maiúsculas e minúsculas, por isso recomendamos que você utilize apenas identificadores com letras minúsculas em seus scripts PHP.
+
+-> No PHP não existe a necessidade de declarar variáveis. Os tipos serão atribuídos automaticamente de acordo com o valor que a variável receber. Esse processo é conhecido como coerção. Isso pode ser até empolgante no início, mas é preciso prestar bastante atenção para não fazer nada errado.
+
+-> Tipagens de variáveis:
+    - (int)/(integer) - inteiro
+    - (real)/(float)/(double) - reais
+    - (string) - string
+    - true = 1 | false = vazio
+
+
+--- PHP ---
+-> &n = 4; - criação de uma variável inteira
+
+-> &n = "Gustavo"; - criação de uma variável string
+-> &n = (string)"Gustavo"; - criação de uma variável que será forçada a ser string independente do que seja
+-> &n = (int)"10Gustavo"; - criação de uma variável que será forçada a ser inteira independente do que seja, porém ele consegue interpretar o 10 por estar no começo da conversão
+
+-> echo $nome."tem".&idade."anos" - comando para concatenação de string usando "." (Necessita de aspas duplas para interpretar as variáveis)
+-> echo "$nome tem &idade anos" - comando para concatenação de string sem utilizar o "." (Necessita de aspas duplas para interpretar as variáveis)
+
+
+
+
+----------------------- Aula 5 -----------------------
+
+-------- Módulos (Operadores aritméticos) --------
+
+--- PHP ---
+-> $s = $n + $m - faz uma soma de 'n' e 'm' e guarda dentro da variável 's'
+-> $s = $n - $m - faz uma subtração de 'n' e 'm' e guarda dentro da variável 's'
+-> $s = $n * $m - faz uma multiplicação de 'n' e 'm' e guarda dentro da variável 's'
+-> $s = $n / $m - faz uma divisão de 'n' e 'm' e guarda dentro da variável 's'
+-> $s = $n % $m - faz uma módulo de 'n' e 'm' e guarda dentro da variável 's'
+
+-> echo "A soma vale ".($n+$m) - mostra no html a soma das variáveis (como fazer operações dentro de um echo)
+
+-> Precedência de operadores
+    - () [parênteses]
+    - * / % [multiplicação, divisão, módulo]
+    - + - [adição, subtração]
+
+-> $n = $_GET["variavel"] - faz com que a variável 'n' atribua o valor "variavel" que foi digitado na url do site e capturado no php
+
+-> abs($var) - retorna o valor absoluto da variável 'var'
+-> pow($x, $y) - retorna o valor da potenciação de 'x' elevado á 'y'
+-> sqrt($x) - retorna o valor da raiz quadrada de 'x'
+-> round($x) - retorna o valor arredondado de 'x' (caso a primeira casa decimal seja maior ou igual a 5, arredonda para cima, caso contrário, para baixo)
+-> ceil($x) - retorna o valor arredondado de 'x' para baixo, independente de qualquer coisa
+-> floor($x) - retorna o valor arredondado de 'x' para cima, independente de qualquer coisa
+-> intval($x) - retorna a parte inteira de 'x'
+-> number_format($x, 2, "separador", "milhar") - retorna o valor de 'x' formatado com 2 casas decimais, "separador" indica qual vai ser o separador decimal do número, "milhar" indica qual vai ser o separador de milhar do número
+
+--- Navegador ---
+-> http://localhost/aula05/operadores.php?a=3&b=2 - é possível passar os valores que serão pegos na própria URL do navegador como no exemplo dado, inseridos após o '?' e separados por '&'
+
+
+
+
+----------------------- Aula 6 -----------------------
+
+-------- Módulos (Operadores de atribuição) --------
+
+--- PHP ---
+-> $c += 5 - soma e atribuição de uma variável com o valor 5
+-> $c -= 5 - subtração e atribuição de uma variável com o valor 5
+-> $c *= 5 - multiplicação e atribuição de uma variável com o valor 5
+-> $c /= 5 - divisão a e atribuição de uma variável com o valor 5
+-> $c %= 5 - módulo e atribuição de uma variável com o valor 5
+-> $c .= "algo" - concatenação e atribuição de uma variável com o valor "algo"
+-> $c++ - soma 1 na variável c
+-> $c-- - subtrai 1 na variável c
+
+-> ++$a - préincremento de 'a'
+-> --$a - prédecremento de 'a'
+
+-> # | // - maneiras de fazer comentário no PHP do tipo inline
+-> /* */ - maneiras de fazer comentário no PHP do tipo multiline
+
+-> $a = &$b - faz uma referência de ponteiro de 'a' para 'b', então toda modificação feita em 'b' será feito também em 'a'
+-> $$a = "algo" - faz uma referência de ponteiro da referência de 'a', ou seja, pega o conteúdo de 'a' e cria uma variável com este nome colocando "algo" dentro
+
+
+
+
+----------------------- Aula 7 -----------------------
+
+-------- Módulos (Operadores relacionais) --------
+
+--- PHP ---
+-> $a > $b - comparação se 'a' é maior que 'b'
+-> $a >= $b - comparação se 'a' é maior ou igual a 'b'
+-> $a < $b - comparação se 'a' é menor que 'b'
+-> $a <= $b - comparação se 'a' é menor ou igual a 'b'
+-> $a <> $b | $a != $b - comparação se 'a' é diferente de 'b'
+-> $a == $b - comparação se 'a' é igual á 'b'
+-> $a === $b - comparação se 'a' é semelhante á 'b'
+
+-> expressao ? true : false - operador ternário que recebe uma expressão, caso seja verdadeira entra no bloco após o '?', caso seja falso entra no bloco após o ':'
+-> (3 == "3") ? "SIM" : "NÃO" - a comparação de '3 == "3"' da resultado verdadeiro, pois é feito conversão direta na comparação
+-> (3 == "3") ? "SIM" : "NÃO" - a comparação de '3 === "3"' da resultado falso, pois é feito a comparação direta de tipagem dos parâmetros
+
+-> and | && - operador 'e' da computação
+-> or | || - operador 'ou' da computação
+-> xor - operador 'ou exclusivo' da computação
+-> ! - operador 'negação' da computação
+
+
+
+----------------------- Aula 8 -----------------------
+
+-------- Módulos (Integração HTML5 + PHP) --------
+
+--- PHP ---
+-> $valor = $_GET["v"] - obtem o valor "v" mandado por referência de um HTML
+-> date("y") - pega o ano atual de forma reduzida (22 por exemplo)
+-> date("Y") - pega o ano atual de forma inteira (2022 por exemplo)
+
+-> $var = isset($GET_["algo"]) ? $GET_["algo"] : "desconhecido" - verifica se foi passado ou não por parâmetro na url da página, se sim ele retorna "GET_["algo"]", caso não retorna "desconhecido"
+
+--- HTML ---
+-> <form method="get" action="ex01-valor.php"> Valor: <input type="number" name="v"> </form> - faz a comunicação do html com o arquivo php através do 'Valor: ...' e 'action="ex01...' com o tipo "get", ele comunica através de um formulário criado no HTML
+-> <input type="radio" name="sexo" id="masc" value="homem" /> - 'value' especifica o valor específico a ser passado por parâmetro para que o PHP consiga pegar algum valor de fato de um tipo "radio"
+
+
+--- CSS ---
+-> font-size: <?php echo $tamanho; ?>; - é possível colocar uma variável do PHP dentro do CSS para customizar a estilização do site
+
+----------------------- Aula 9 -----------------------
+
+-------- Módulos (Estrutura condicional if) --------
+
+--- PHP ---
+-> if(condicional){ algo } else if { algo } else {} - comando básico para condicionais 'se', 'senao se' e 'senao'
+
+
+
+
+----------------------- Aula 10 -----------------------
+
+-------- Módulos (Estrutura condicional switch) --------
+
+--- PHP ---
+-> switch(variavel) { case 1: algo; break; case 2: algo; break; ... default: erro; break;} - funciona como um if, porém com uma variável, cada 'case' representa um valor da variável, sendo executado 'algo' se a variável for igual a 'case 1' por por exemplo, 'default' é caso não seja nenhuma opção de 'case', 'break' se refere a parar aquela condicional e sair do 'case'
+
+--- HTML ---
+-> <a href="javascript:history.go(-1)"> - faz com que o usuário volte para a página anterior do histórico de navegação daquela aba do navegador
+
+
+
+
+----------------------- Aula 11 -----------------------
+
+-------- Módulos (Estrutura de repetição while) --------
+
+--- PHP ---
+-> while (condicional) { algo } - comando de repetição que repete 'algo' até que a 'condicional' retorne valor falso
+
+
+
+
+----------------------- Aula 12 -----------------------
+
+-------- Módulos (Estrutura de repetição do while) --------
+
+--- PHP ---
+-> do { algo } while (condicional) - mesma estrutura do while, porém com 'do' antes
+
+
+
+----------------------- Aula 13 -----------------------
+
+-------- Módulos (Estrutura de Repetição For) --------
+
+--- PHP ---
+-> for($i = 0; $i < 10; $i++) { algo } - estrutura de repetição com inicio, fim e incremento ('$i=0', '$i<10' e '$i++' respectivamente)
+
+
+
+----------------------- Aula 14 -----------------------
+
+-------- Módulos (Rotinas em PHP – Parte 1) --------
+
+--- PHP ---
+-> function nome($variavel1, $variavel2) { algo } - declaração de uma função em PHP, 'fuction' é a palavra reservada para funções, 'nome' é o nome da função, 'variavel1' e 'variavel2' são so parâmetros, logo após ele executa 'algo' caso a função seja chamada em algum momento no código
+-> return $algo - return é o retorno da função que foi definida, levando '$algo' para a função principal do programa
+-> $p = func_get_args() - cria um vetor com todos os argumentos passados por parâmetro em uma função que está em branco (exemplo: function soma() - não há nada como parâmetro, logo irá aceitar diversos parâmetros)
+-> $tot = func_num_args() - faz a contagem de quantos argumentos foram passados por parâmetro em uma função que está em branco
+
+
+
+
+----------------------- Aula 15 -----------------------
+
+-------- Módulos (Rotinas em PHP – Parte 2) --------
+
+-> Procedimento - Não retorna um valor
+-> Função - Retorna um valor
+
+--- PHP ---
+-> function nome(&$variavel) { algo } - '&$variavel' é uma variável passada por referência no PHP que faz com que tudo que aconteça neste função 'nome' seja realmente modificado internamente na memória
+-> include "nome.php" - 'include' é uma palavra reservada que faz referência a uma importação de biblioteca ou script que tem funções, ele pode ser usado para economizar código e reutilizar funções que já existem no sistema
+-> require "nome.php" - 'require' funciona igual ao 'include', porém caso ele não ache o arquivo especificado, será emitido um erro e não será executado nada do script
+-> include-once | require-once - tem as mesmas funcionalidades de cada um, porém ele somente verifica se já foi carregado a biblioteca, caso já esteja carregada, não carregará novamente (Para tratar erros de duplicação de include ou require)
+
+
+
+
+----------------------- Aula 16 -----------------------
+
+-------- Módulos (Funções String em PHP – Parte 1) --------
+
+--- PHP ---
+-> printf("") - Permite exibir uma string com itens formatados (Funciona exatamente como na linguagem C)
+    -> %d - valor decimal
+    -> %u - valor decimal sem sinal
+    -> %f - valor real (com vírgula)
+    -> %s - valor de string
+
+-> $x[0] = 2 - faz um vetor chamado 'x' que tem o valor '2', todo vetor começa na posição 0
+-> $y = array(3, 4, 5, 6) - faz um vetor chamado 'y' que tem os valores '3, 4, 5, 6' previamente
+-> print_r("") - Exibe coleções, objetos e variáveis compostas (vetores e matrizes) de maneira organizada
+-> var_dump("") - Exibe coleções, objetos e variáveis compostas (vetores e matrizes) de maneira organizada (Mostra o tamanho do vetor inicialmente e a tipagem de cada posição)
+-> var_export("") - Exibe coleções, objetos e variáveis compostas (vetores e matrizes) de maneira organizada (Mostra o vetor separando por vírgulas os valores e tira os colchetes para as posições em relação ao print_r)
+
+-> wordwrap($var, tamanho, "tipo de quebra", quebra forçada) - Cria quebras de linha ou divisões em uma string em um tamanho especificado, '$var' é a variável de texto que vai sofrer a ação, 'tamanho' é o limite de caracteres numa linha, 'tipo de quebra' é o que será colocado quando chegar ao final do limite de cada linha (<br/> por exemplo), 'quebra forçada' se for 'true' ele faz com que mesmo que a palavra tenha mais do que o 'tamanho' desejado ela ainda será quebrada, caso seja 'false' ela não será quebrada mesmo se ultrapassar o 'tamanho'
+
+-> strlen() - Permite verificar o tamanho de uma string, contando seus caracteres (inclusive espaços em branco)
+
+-> trim() - Elimina espaços em branco antes e depois de uma string
+-> ltrim() : Elimina espaços no início de uma string
+-> rtrim() - Elimina espaços em branco no final de uma string
+
+-> str_word_count($var, tipo) - Conta quantas palavras uma string possui, '$var' é a variável que vai sofrer a contagem, 'tipo' é um inteiro que se for 0 ele fará a contagem normalmente, caso seja 1 ele fará um vetor de todas as palavras desta string, caso seja 2 ele fará um vetor de todas as palavras da string e colocar a posição incial de cada palavra como um índice de vetor
+-> explode("separador", $var) - Quebra uma string e coloca os itens em um vetor, "separador" vai definir qual o tipo de separador de string será considerado, '$var' é a variável que sofrerá a função
+-> str_split($var) - Coloca cada letra de uma string em uma posição de um vetor, '$var' é a variável que sofrerá a função
+-> implode("separador", $var) | join("separador", $var) - Transforma um vetor inteiro em uma string, "separador" vai definir qual o tipo de separador que será juntado cada posição do vetor, '$var' é a variável que sofrerá a função
+
+-> chr(numero) - Retorna um caractere de acordo com seu código ASCII passado como parâmetro, 'numero' é a numeração do caractere que deseja saber a letra
+-> ord("letra") - Retorna o código ASCII de um caractere passado como parâmetro, "letra" é o caractere que deseja saber a numeração do código ASCII
+
+
+----------------------- Aula 17 -----------------------
+
+-------- Módulos (Funções String em PHP – Parte 2) --------
+
+-> PHP imprime "vazio" para false e "1" para true
+
+--- PHP ---
+-> strtolower($var) - Faz com que toda a string '$var' seja passada para letras minúsculas
+-> strtoupper($var) - Faz com que toda a string '$var' seja passada para letras maiúsculas
+
+-> ucfirst($var) - Faz com que a primeira letra da string '$var' seja convertida para maiúscula (somente a primeira)
+-> ucwords($var) - Faz com que a primeira letra de cada palavra da string '$var' seja convertida para maiúscula (somente a primeira letra de cada palavra)
+
+-> strrev($var) - Faz com que toda a string '$var' seja invertida
+-> strpos($var, "algo") - Faz com que busque "algo" na '$var' e retorne a posição inicial de onde ela encontrou "algo"
+-> stripos($var, "algo") - Faz com que busque "algo" na '$var' e retorne a posição inicial de onde ela encontrou "algo" (a diferença é que ela procura a substring independente de case sensitive, ou seja, mesmo que procure algo maiúsculo e digitou em minúsculo, vai achar)
+
+-> substring_count($var, "algo") - Faz com que retorne a quantidade de vezes que achou "algo" dentro de '$var'
+-> substring($var, 0, 5) - Faz com que crie um fatiamento de '$var' que começa na posição '0' e pegue '5' posições a frente
+    -> substring($var, 7) - Faz com que crie um fatiamento de '$var' que começa na posição '7' até o final da string
+    -> substring($var, -5) - Faz com que crie um fatiamento de '$var' que começa na posição '5' da direita para esquerda e termine na ultima posição
+    -> substring($var, -5, 2) - Faz com que crie um fatiamento de '$var' que começa na posição '5' da direita para esquerda e pegue somente as '2' primeiras
+    -> substring($var, 9, 5) - Faz com que crie um fatiamento de '$var' que começa na posição '9' e pegue '5' posições a frente
+-> str_pad($var, espaço, "caractere|substring", STR_PAD_RIGHT) - Faz com que crie uma string maior com 'espaço' que deseja preenchendo os espaços em branco por "caractere|substring" que deseja, utilizando do alinhamento a direita 'STR_PAD_RIGHT'
+    -> str_pad($var, espaço, "caractere|substring", STR_PAD_BOTH) - Com alinhamento central
+    -> str_pad($var, espaço, "caractere|substring", STR_PAD_LEFT) - Com alinhamento á esquerda
+-> str_repeat("algo", tamanho) - Faz com que crie-se uma repetição de "algo" em 'tamanho' vezes
+-> str_replace("algo", "outro", $var) - Faz com que troque todas as ocorrências de "algo" por "outro" na '$var' (É case sensitive)
+-> str_ireplace("algo", "outro", $var) - Faz com que troque todas as ocorrências de "algo" por "outro" na '$var' (Não é case sensitive)
+
+
+
+
+----------------------- Aula 18 -----------------------
+
+-------- Módulos ( Vetores e Matrizes – Parte 1) --------
+
+--- PHP ---
+-> $n = array(3, 5, 8, 2) - cria um array '$n' com 4 posições
+-> $n = array("algo"=>"outro", "negocio"=>"coisa") - cria um array '$n' com chaves compostas, sendo possível utilizar letras ao invés de números para indexação
+-> $n = array(1=>"A", 3=>"B", 6=>"C", 8=>"D") - cria um array '$n' com os índices personalizados, não deixando espaços vazios entre os índices que digitou
+-> $n[] = 7 - cria uma nova posição no array '$n' e insere o valor '7' dinamicamente
+-> $n["algo"] = "nome" - cria uma nova posição no array '$n' com chave "algo" e valor "nome"
+-> unset($n[pos]) - exclui de um vetor '$n' a posição 'pos', desalocando da memória o que foi excluído
+-> $m[0][1] = $m[2][0] - Faz uma atribuição da posição da linha '0' e coluna '1' para linha '2' e coluna '0'
+
+-> $c = range(5, 20, 2) - cria um array '$c' que insere dinamicamente iniciando com '5', indo até '20' e pulando de '2' em '2'
+
+-> foreach($c as $valor) { echo "$valor"; } - cria um iterador FOREACH que para cada '$valor' dentro de '$c' seja printado
+-> foreach($c as $chave => $valor) { echo "$chave => $valor"; } - cria um FOREACH do estilo dicionário, com '$chave' e '$valor' usando '$c' que é um array
+
+--- HTML ---
+-> <pre> - tag para mostrar um texto pré-formatado
+
+----------------------- Aula 19 -----------------------
+
+-------- Módulos ( Vetores e Matrizes – Parte 2) --------
+
+--- PHP ---
+-> count($vetor) - conta o número de elementos dentro de um vetor da variável '$vetor'
+
+-> array_push($vetor, valor) - coloca o 'valor' na última posição do vetor '$vetor'
+-> array_pop($vetor) - retira o último elemento do vetor '$vetor'
+-> array_unset($vetor, valor) - coloca o 'valor' na primeira posição do vetor '$vetor' dinamicamente
+-> array_shift($vetor) - retira o primeiro valor do vetor '$vetor' dinamicamente e atualiza os índices
+
+-> sort($vetor) - ordena o '$vetor' em ordem alfabética se for letras e ordena de forma crescente se for números
+-> rsort($vetor) - ordena o '$vetor' em ordem contrária a alfabética se for letras e ordena de forma decrescente se for números
+-> asort($vetor) - ordena o '$vetor' em ordem alfabética se for letras e ordena de forma crescente se for números (Porém ele muda os índices também, mantendo qual foram os deslocamentos)
+-> arsort($vetor) - faz a mesma coisa que o 'asort($vetor)', porém reverso
+-> ksort($vetor) - ordena o '$vetor' pelos índices de forma crescente, e não pelos elementos
+-> krsort($vetor) - mesma coisa que o 'ksort($vetor)', porém reverso
